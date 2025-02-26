@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build Your Own AI Prompt">
+  <title>Interactive Prompt Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function generatePrompt() {
+      var topic = document.getElementById("topic").value;
+      var contentType = document.getElementById("content_type").value;
+      var tone = document.getElementById("tone").value;
+
+      var prompt = "";
+      if (contentType === "Blog") {
+        prompt = `Write a blog post about ${topic}. The tone should be ${tone}, with an introduction, 3 main points, and a conclusion.`;
+      } else if (contentType === "Product Description") {
+        prompt = `Write a short, catchy product description for ${topic}.`;
+      }
+
+      document.getElementById("generated_prompt").innerText = prompt;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Interactive Prompt Builder</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="showcase.html">Prompt Showcase</a></li>
+          <li><a href="builder.html">Interactive Prompt Builder</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2>Build Your Custom Prompt</h2>
+
+    <label for="topic">Topic:</label>
+    <input type="text" id="topic" name="topic"><br><br>
+
+    <label for="content_type">Content Type:</label>
+    <select id="content_type">
+      <option value="Blog">Blog</option>
+      <option value="Product Description">Product Description</option>
+    </select><br><br>
+
+    <label for="tone">Tone:</label>
+    <select id="tone">
+      <option value="Professional">Professional</option>
+      <option value="Casual">Casual</option>
+    </select><br><br>
+
+    <button onclick="generatePrompt()">Generate Prompt</button>
+
+    <h3>Generated Prompt:</h3>
+    <p id="generated_prompt"></p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Created by <strong>Your Name</strong></p>
+    </div>
+  </footer>
+</body>
+</html>
