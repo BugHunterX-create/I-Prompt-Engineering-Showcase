@@ -6,22 +6,6 @@
   <meta name="description" content="Build Your Own AI Prompt">
   <title>Interactive Prompt Builder</title>
   <link rel="stylesheet" href="styles.css">
-  <script>
-    function generatePrompt() {
-      var topic = document.getElementById("topic").value;
-      var contentType = document.getElementById("content_type").value;
-      var tone = document.getElementById("tone").value;
-
-      var prompt = "";
-      if (contentType === "Blog") {
-        prompt = `Write a blog post about ${topic}. The tone should be ${tone}, with an introduction, 3 main points, and a conclusion.`;
-      } else if (contentType === "Product Description") {
-        prompt = `Write a short, catchy product description for ${topic}.`;
-      }
-
-      document.getElementById("generated_prompt").innerText = prompt;
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -40,6 +24,7 @@
   <main>
     <h2>Build Your Custom Prompt</h2>
 
+    <!-- User Input Fields -->
     <label for="topic">Topic:</label>
     <input type="text" id="topic" name="topic"><br><br>
 
@@ -57,6 +42,7 @@
 
     <button onclick="generatePrompt()">Generate Prompt</button>
 
+    <!-- Display Generated Prompt -->
     <h3>Generated Prompt:</h3>
     <p id="generated_prompt"></p>
   </main>
@@ -66,5 +52,8 @@
       <p>Created by <strong>Your Name</strong></p>
     </div>
   </footer>
+
+  <!-- Link to the External JavaScript File -->
+  <script src="scripts.js"></script>
 </body>
 </html>
