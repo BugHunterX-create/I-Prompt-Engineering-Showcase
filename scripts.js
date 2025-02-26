@@ -4,13 +4,11 @@ function generatePrompt() {
     var contentType = document.getElementById("content_type").value;
     var tone = document.getElementById("tone").value;
 
-    var prompt = "";
-    if (contentType === "Blog") {
-        prompt = `Write a blog post about ${topic}. The tone should be ${tone}, with an introduction, 3 main points, and a conclusion.`;
-    } else if (contentType === "Product Description") {
-        prompt = `Write a short, catchy product description for ${topic}.`;
+    if (!topic.trim()) {
+        alert("Please enter a topic.");
+        return;
     }
-
-    // Display the generated prompt on the page
+    
+    var prompt = `Write a ${tone.toLowerCase()} ${contentType.toLowerCase()} about ${topic}.`;
     document.getElementById("generated_prompt").innerText = prompt;
 }
